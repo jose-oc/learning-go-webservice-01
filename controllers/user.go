@@ -101,7 +101,7 @@ func (uc *userController) post(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusInternalServerError)
 		encodeResponseAsJSON(map[string]string{"error": err.Error()}, w)
 	} else {
-		fmt.Println("User added", u)
+		fmt.Printf("User added: %+v\n", u)
 		encodeResponseAsJSON(u, w)
 	}
 }
